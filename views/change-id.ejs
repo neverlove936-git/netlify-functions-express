@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script>
+  var token = "<%= token %>";
+  alert(token);
+</script>
+<script>
+  function redirect() {
+    window.open("./change_id_sucess.html" + '?id=' + document.getElementById("new_id").value, "_self");
+    return false;
+  }
+</script>
+<style>
+  body {
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  }
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  textarea {
+    font-size: 16px;
+  }
+  .btn {
+    background-color: #30559A;
+    opacity: 0.9;
+  }
+  .btn:hover {
+    background-color: #30559A;
+    opacity: 1;
+  }
+
+</style>
+<div class="container">
+  <h1 style="color: #30559A; margin-bottom: 40px;">Sompo</h1>
+  <p><%= title %></p>
+  <form onsubmit="return redirect()">
+    <div class="form-group" >
+      <label for="usr">Old ID:</label>
+      <input type="text" class="form-control" id="old_id" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">New ID:</label>
+      <input type="text" class="form-control" id="new_id" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Confirm New ID:</label>
+      <input type="text" class="form-control" id="confirm_new_id" required>
+    </div>
+    <input type="submit" class="btn btn-info" value="Submit">
+  </form>
+</div>
+</body>
+</html>
